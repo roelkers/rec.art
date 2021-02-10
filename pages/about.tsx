@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import Layout from '../components/Layout';
-import { attributes, react as HomeContent } from '../content/home.md';
+import { attributes, react as AboutContent } from '../content/about.md';
 
 export default class Home extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class Home extends Component {
       <Layout title={title} navigation={navigation}>
         <article>
           <h1>{title}</h1>
-          <HomeContent />
+          <AboutContent />
         </article>
       </Layout>
     )
