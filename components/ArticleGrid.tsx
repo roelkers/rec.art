@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Article } from '../interfaces'
-import Image from 'next/image'
 
 interface ArticleGridProps {
   articles: Article[]
@@ -32,10 +31,12 @@ const GridItem = styled.div`
   } 
 `
 
-const ImgContainer = styled.div`
+const ImgContainer = styled.img`
   position: relative;
   width: 22rem;
   height: 32rem; 
+  border-radius: 1rem;
+  object-fit:cover;
   @media screen and (min-width: 1024px) {
      width: 30rem;
      height: 50rem;
@@ -49,10 +50,6 @@ const GridContent = styled.div`
   justify-content: flex-start;
 `
 
-const NextImage = styled(Image)`
-  border-radius: 1rem;
-`
-
 const Paragraph = styled.p`
   font-size: 1.3rem; 
 `
@@ -63,9 +60,8 @@ const ArticleGrid = (props: ArticleGridProps) => {
     <Grid>
       {articles.map(a => (
         <GridItem key={a.name}>
-          <ImgContainer >
-          {/* @ts-ignore */}
-            <NextImage layout='fill' objectFit='cover' src={a.img || '/../public/img/bronze_sculpture.jpg'} />
+          <ImgContainer 
+            src={require('../public/img/bronze_sculpture.jpg')} >
           </ImgContainer>
           <GridContent>
             <h4>{a.name}</h4>
