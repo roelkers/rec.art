@@ -43,6 +43,16 @@ collections:
       name: "shop"
       file: "content/shop.md"
       fields:
+        - label: "Navigation"
+          name: "navigation"
+          widget: list
+          fields:
+            - { label: "Name", name: "name", widget: "string" } 
+            - { label: "Link", name: "link", widget: "string" } 
+    - label: "Shop"
+      name: "shop"
+      file: "content/sculptures.md"
+      fields:
         - label: 'Articles'
           name: "articles"
           widget: list

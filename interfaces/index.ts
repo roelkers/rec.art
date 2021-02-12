@@ -4,7 +4,10 @@
 //
 // import { User } from 'path/to/interfaces';
 
-export type User = {
-  id: number
-  name: string
+export type Article = {
+  name: string;
+  img: string;
+  shortDescription: string;
+  longDescription: string;
+  price: number;
 }

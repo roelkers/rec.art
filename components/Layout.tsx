@@ -18,6 +18,7 @@ type Props = {
 const theme: DefaultTheme = {
   colors: {
     primary:  '#00414D',
+    primaryLight: '#2C8F9C',
     secondary: '#9E0D4E',
     tertiary : '#FF7300',
     white: '#eeeeff',
@@ -46,9 +47,23 @@ const GlobalStyle = createGlobalStyle`
   h2 {
     font-size: 2.5rem;
   }
+
+  h3 {
+    margin-top: 0.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
   
   p, a {
     font-size: 1.4rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
   }
 `;
 
@@ -202,7 +217,7 @@ const Layout = ({ children, navigation, title = 'This is the default title' }: P
       <Sidebar>
         <SideNav>
           {navigation.map(n => (
-          <Link href={n.link}>
+          <Link key={n.link} href={n.link}>
             <ListItem>{n.name}</ListItem>
           </Link>
           ))}
